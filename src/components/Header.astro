@@ -1,3 +1,6 @@
+---
+import ArrowIcon from './ArrowIcon.astro';
+---
 <header class="site-header">
   <a class="brand" href="#top" aria-label="Ridgeline Roofing home"><img class="logo-image" src="/assets/logo.png" alt="Ridgeline Roofing" /></a>
   <nav aria-label="Main navigation">
@@ -6,7 +9,7 @@
     <a href="#about">About</a>
     <a href="#faq">FAQ's</a>
   </nav>
-  <a class="button button--quote" href="#contact">Get Quote <span aria-hidden="true">↗</span></a>
+  <a class="button button--quote" href="#contact">Get Quote <ArrowIcon /></a>
   <details class="mobile-menu">
     <summary aria-label="Open navigation menu"><span></span><span></span><span></span></summary>
     <nav aria-label="Mobile navigation">
@@ -14,7 +17,7 @@
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ's</a>
-      <a class="mobile-menu__quote" href="#contact">Get Quote <span aria-hidden="true">↗</span></a>
+      <a class="mobile-menu__quote" href="#contact">Get Quote <ArrowIcon /></a>
     </nav>
   </details>
 </header>
