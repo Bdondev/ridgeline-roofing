@@ -9,9 +9,12 @@ npm install
 npm run check
 npm run build
 npm run dev
+npm run test:visual
 ```
 
 The reference screenshots and source assets remain in `references/` and `assets/`. The implementation uses the supplied photography without text overlays and is designed for 1440px desktop and 390px mobile review.
+
+Playwright visual checks cover the hero, proof, services, process, testimonial, FAQ, footer, full page, and mobile navigation at the target desktop/mobile viewports. To intentionally refresh the implementation baselines after an approved visual change, run `npm run test:visual:update`.
 
 ## Screenshot-to-site asset workflow
 
