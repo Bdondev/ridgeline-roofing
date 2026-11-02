@@ -1,7 +1,7 @@
 ---
-const { eyebrow, title } = Astro.props;
+const { eyebrow, title, titleLines } = Astro.props;
 ---
 <div class="section-heading">
   {eyebrow && <p class="eyebrow">{eyebrow}</p>}
-  <h2>{title}</h2>
+  <h2>{titleLines ? titleLines.map((line: string) => <span>{line}</span>) : title}</h2>
 </div>
