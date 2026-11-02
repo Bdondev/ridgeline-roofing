@@ -18,6 +18,13 @@ test.describe('Ridgeline reference visual checks', () => {
 
   for (const [name, selector, reference] of sections) {
     test(`${name} matches its reference checkpoint: ${reference}`, async ({ page }) => {
+      // The global sticky header belongs to the hero/full-page composition. Keep it
+      // out of isolated section crops so those comparisons remain section-only.
+      if (name !== 'hero') {
+        await page.locator('.site-header').evaluate((header) => {
+          header.style.visibility = 'hidden';
+        });
+      }
       await expect(page.locator(selector)).toHaveScreenshot(`${name}.png`, {
         maxDiffPixels: name === 'faq' ? 1000 : name === 'services' ? 300 : 100,
       });
