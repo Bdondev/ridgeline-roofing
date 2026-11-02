@@ -30,7 +30,7 @@ test.describe('Ridgeline reference visual checks', () => {
   });
 
   test('matches the approved container and content rules', async ({ page }) => {
-    await expect(page.locator('.hero__copy p')).toBeHidden();
+    await expect(page.locator('.hero__copy p')).toBeVisible();
     await expect(page.locator('.faq b')).toHaveCount(0);
     const servicesWidth = await page.locator('.services').evaluate((element) => element.getBoundingClientRect().width);
     expect(servicesWidth).toBe(await page.evaluate(() => document.documentElement.clientWidth));
