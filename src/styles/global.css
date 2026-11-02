@@ -7,7 +7,7 @@ body { margin:0; background:var(--paper); color:var(--ink); font-family:'DM Sans
 a { color:inherit; text-decoration:none; }
 img { display:block; max-width:100%; }
 .shell { width:100%; margin-inline:0; }
-.site-header { display:flex; align-items:center; gap:32px; margin:16px 20px -76px; padding:14px 20px; background:rgba(255,255,255,.28); border:1px solid rgba(255,255,255,.62); border-radius:22px; backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); position:sticky; top:16px; z-index:10; }
+.site-header { display:flex; align-items:center; gap:32px; margin:16px 20px -76px; padding:14px 20px; background:#fcfbfc; border:1px solid rgba(255,255,255,.9); border-radius:22px; position:sticky; top:16px; z-index:10; transition:background-color .2s ease,border-color .2s ease,backdrop-filter .2s ease; }.site-header.is-scrolled { background:rgba(255,255,255,.28); border-color:rgba(255,255,255,.62); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); }
 .logo-image { display:block; width:126px; height:auto; }
 .brand { font:700 12px/1 'Space Grotesk',sans-serif; letter-spacing:-.06em; white-space:nowrap; }.brand span { color:#1768ea; }
 nav { display:flex; gap:28px; margin-left:auto; font-size:11px; } nav a:focus-visible, a:focus-visible, summary:focus-visible { outline:3px solid var(--orange); outline-offset:4px; }

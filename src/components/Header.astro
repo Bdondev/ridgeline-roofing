@@ -18,3 +18,16 @@
     </nav>
   </details>
 </header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('.site-header');
+
+  if (header) {
+    const syncHeaderState = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 8);
+    };
+
+    syncHeaderState();
+    window.addEventListener('scroll', syncHeaderState, { passive: true });
+  }
+</script>
