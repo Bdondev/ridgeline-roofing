@@ -50,7 +50,7 @@ const images = {
       <div class="services__visual services__visual--two"><img src={images.serviceTwo} alt="Roofer working on a roof" /></div>
       <div class="services__visual services__visual--three"><img src={images.serviceThree} alt="Crew installing shingles" /></div>
       <ul class="service-list">
-        <li>Roof Repair</li><li>Inspections</li><li>Storm Damage</li><li class="active">Full Replacement</li><li>Gutters &amp; Siding</li><li>Maintenance Plans</li>
+        <li data-service-item>Roof Repair</li><li data-service-item>Inspections</li><li data-service-item>Storm Damage</li><li class="active" data-service-item>Full Replacement</li><li data-service-item>Gutters &amp; Siding</li><li data-service-item>Maintenance Plans</li>
       </ul>
     </section>
 
@@ -88,3 +88,25 @@ const images = {
     </footer>
   </main>
 </Layout>
+
+<script>
+  const serviceSection = document.querySelector<HTMLElement>('.services');
+  const serviceItems = [...document.querySelectorAll<HTMLElement>('[data-service-item]')];
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (serviceSection && serviceItems.length && !reducedMotion && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('motion-ready');
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        serviceItems.forEach((item, index) => {
+          item.style.setProperty('--service-delay', `${index * 70}ms`);
+          item.classList.add('is-visible');
+        });
+        observer.disconnect();
+      },
+      { threshold: 0.18 },
+    );
+    observer.observe(serviceSection);
+  }
+</script>
