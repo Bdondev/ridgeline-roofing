@@ -3,18 +3,18 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import SectionLabel from '../components/SectionLabel.astro';
 
-const asset = (name: string) => `/assets/${encodeURIComponent(name)}`;
+const asset = (name: string) => `/assets/${name}`;
 const images = {
-  hero: asset('Pasted 2026-11-02 at 1.04.09 PM.png'),
-  metricOne: asset('Pasted 2026-11-02 at 1.03.51 PM.png'),
-  metricTwo: asset('Pasted 2026-11-02 at 1.04.43 PM.png'),
-  serviceOne: asset('Pasted 2026-11-02 at 1.04.57 PM.png'),
-  serviceTwo: asset('Pasted 2026-11-02 at 1.05.15 PM.png'),
-  serviceThree: asset('Pasted 2026-11-02 at 1.05.31 PM.png'),
-  processOne: asset('Pasted 2026-11-02 at 1.05.51 PM.png'),
-  processTwo: asset('Pasted 2026-11-02 at 1.06.13 PM.png'),
-  processThree: asset('Pasted 2026-11-02 at 1.06.32 PM.png'),
-  faq: asset('Pasted 2026-11-02 at 1.06.50 PM.png'),
+  hero: asset('hero.png'),
+  metricOne: asset('proof-build.png'),
+  metricTwo: asset('proof-roof.png'),
+  serviceOne: asset('service-repair.png'),
+  serviceTwo: asset('service-inspection.png'),
+  serviceThree: asset('service-team.png'),
+  processOne: asset('process-inspection.png'),
+  processTwo: asset('process-estimate.png'),
+  processThree: asset('process-install.png'),
+  faq: asset('faq-roof.png'),
 };
 ---
 <Layout>
