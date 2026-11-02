@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import SectionLabel from '../components/SectionLabel.astro';
+
+const asset = (name: string) => `/assets/${encodeURIComponent(name)}`;
+const images = {
+  hero: asset('Pasted 2026-11-02 at 1.04.09 PM.png'),
+  metricOne: asset('Pasted 2026-11-02 at 1.03.51 PM.png'),
+  metricTwo: asset('Pasted 2026-11-02 at 1.04.43 PM.png'),
+  serviceOne: asset('Pasted 2026-11-02 at 1.04.57 PM.png'),
+  serviceTwo: asset('Pasted 2026-11-02 at 1.05.15 PM.png'),
+  serviceThree: asset('Pasted 2026-11-02 at 1.05.31 PM.png'),
+  processOne: asset('Pasted 2026-11-02 at 1.05.51 PM.png'),
+  processTwo: asset('Pasted 2026-11-02 at 1.06.13 PM.png'),
+  processThree: asset('Pasted 2026-11-02 at 1.06.32 PM.png'),
+  faq: asset('Pasted 2026-11-02 at 1.06.50 PM.png'),
+};
+---
+<Layout>
+  <main id="top">
+    <section class="hero shell">
+      <Header />
+      <div class="hero__content">
+        <div class="hero__copy">
+          <p>Protecting your home, one roof at a time — repairs, replacements, and storm restoration you can trust.</p>
+          <a class="button button--light" href="#services">Explore our services <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero__image">
+          <img src={images.hero} alt="Roofing professional working on a shingle roof" />
+          <a class="phone-pill" href="tel:+1412741358">01-427-14358 <span aria-hidden="true">◔</span></a>
+        </div>
+        <h1>RIDGELINE ROOFING</h1>
+      </div>
+    </section>
+
+    <section class="proof shell" id="about">
+      <div class="proof__intro"><h2>BUILT TO<br />LAST.</h2></div>
+      <figure class="photo-card photo-card--large"><img src={images.metricOne} alt="Roofer framing a new roof" /></figure>
+      <figure class="photo-card photo-card--small"><img src={images.metricTwo} alt="Roofer repairing a roof" /></figure>
+      <div class="stat stat--left"><strong>12K+</strong><span>Roofs Restored</span></div>
+      <div class="stat stat--center"><strong>800+</strong><span>Projects Completed</span></div>
+      <div class="stat stat--right"><strong>25+</strong><span>Certified Roofers</span></div>
+    </section>
+
+    <section class="services shell" id="services">
+      <div class="services__top"><SectionLabel title="WHAT WE DO" /><p>Every job, from a single shingle to a full tear-off, handled by the same crew start to finish.</p></div>
+      <div class="services__visual services__visual--one"><img src={images.serviceOne} alt="Roofing professional inspecting materials" /></div>
+      <div class="services__visual services__visual--two"><img src={images.serviceTwo} alt="Roofer working on a roof" /></div>
+      <div class="services__visual services__visual--three"><img src={images.serviceThree} alt="Crew installing shingles" /></div>
+      <ul class="service-list">
+        <li>Roof Repair</li><li>Inspections</li><li>Storm Damage</li><li class="active">Full Replacement</li><li>Gutters &amp; Siding</li><li>Maintenance Plans</li>
+      </ul>
+    </section>
+
+    <section class="process shell">
+      <SectionLabel title="OUR PROCESS" />
+      <div class="process-grid">
+        <article class="process-card process-card--blue"><span>01</span><img src={images.processOne} alt="Roof inspection and assessment" /><h3>Inspection &amp;<br />Assessment</h3></article>
+        <article class="process-card process-card--cyan"><span>02</span><img src={images.processTwo} alt="Roofer preparing a clear estimate" /><h3>Clear Estimate<br />&amp; Plan</h3></article>
+        <article class="process-card process-card--peach"><span>03</span><img src={images.processThree} alt="Professional roofer installing shingles" /><h3>Professional<br />Roofing</h3></article>
+      </div>
+    </section>
+
+    <section class="testimonial shell">
+      <p class="eyebrow">Trusted by homeowners</p>
+      <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+      <blockquote>“They caught issues our last roofer missed — flashing, ventilation, everything. One crew, one job, done right the first time.”</blockquote>
+      <p class="quote-author">Sam Whitman<br /><span>Homeowner, Boston, TX</span></p>
+    </section>
+
+    <section class="faq shell" id="faq">
+      <div class="faq__copy"><SectionLabel title="QUESTIONS,<br />ANSWERED." /><p>Still not sure? Reach out and we'll walk you through it — no pressure, no obligation.</p><img src={images.faq} alt="Roofer inspecting a home exterior" /></div>
+      <div class="faq__list">
+        <details open><summary>How long does a roof replacement take?<span>+</span></summary><p>Most replacements are completed in one to three days, depending on the size and scope of the roof.</p></details>
+        <details><summary>Do you work with my insurance?<span>+</span></summary><p>Yes. We document the damage, meet your adjuster on-site when needed, and handle the paperwork so the claim moves faster.</p></details>
+        <details><summary>What's included in the free inspection?<span>+</span></summary><p>We check shingles, flashing, ventilation, gutters, and signs of water intrusion, then explain our findings clearly.</p></details>
+        <details><summary>Is the warranty transferable if I sell?<span>+</span></summary><p>Warranty terms depend on the selected service and materials. We explain all coverage before work begins.</p></details>
+        <details><summary>Do you handle emergency repairs?<span>+</span></summary><p>Yes. Contact our team and we will help secure the roof and plan the next step.</p></details>
+      </div>
+    </section>
+
+    <footer class="footer shell" id="contact">
+      <div class="footer__top"><h2>COMPLETE ROOFING AND<br />STORM DAMAGE RESTORATION</h2><div><a class="button button--light" href="mailto:hello@ridgelineroofing.com">Explore our services <span aria-hidden="true">↗</span></a><a class="phone-pill" href="tel:+1412741358">01-427-14358 <span aria-hidden="true">◔</span></a></div></div>
+      <div class="footer__columns"><div><h3>Service Area</h3><p>Serving Brampton, Fort Worth, Arlington, Colleyville, Keller, TX, and surrounding areas.</p></div><div><h3>About</h3><p>Ridgeline Roofing provides quality roof, siding, and window repair, installations, and painting services.</p></div><div><h3>Contact</h3><p>hello@ridgelineroofing.com<br />(817) 555-0148</p></div></div>
+      <div class="footer__bottom"><a class="brand" href="#top">RIDGELINE <span>ROOFING</span></a><nav aria-label="Footer navigation"><a href="#top">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#faq">FAQ's</a></nav></div>
+    </footer>
+  </main>
+</Layout>

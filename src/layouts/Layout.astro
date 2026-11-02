@@ -1,0 +1,18 @@
+---
+import '../styles/global.css';
+
+const { title = 'Ridgeline Roofing | Roofing and Storm Restoration', description = 'Protecting your home, one roof at a time — repairs, replacements, and storm restoration you can trust.' } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="data:," />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
