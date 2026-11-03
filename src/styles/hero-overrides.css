@@ -5,9 +5,10 @@
   }
 
   .hero {
-    width: calc(100% - 32px);
+    width: 100%;
     min-height: 778px;
-    margin-inline: 16px;
+    margin-inline: 0;
+    border-radius: 0;
   }
 
   .hero__content {
@@ -54,8 +55,8 @@
   }
 
   .hero h1 {
-    left: calc((100% - 1280px) / 2);
-    font-size: 132px;
+    left: max(24px, calc((100% - 1280px) / 2));
+    font-size: clamp(64px, 9.1667vw, 132px);
   }
 
   .hero__copy .button {
