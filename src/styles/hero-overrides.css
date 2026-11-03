@@ -78,11 +78,12 @@
   }
 }
 
-/* Keep the desktop hero outer width aligned with the full-width services section. */
+/* Restore the approved desktop frame at the 1280px-grid review width. */
 @media (min-width: 1200px) {
   .hero {
-    width: 100%;
-    margin-inline: 0;
+    width: calc(100% - 32px);
+    margin-inline: 16px;
+    border-radius: 0 0 28px 28px;
   }
 }
 
