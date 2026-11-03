@@ -1,4 +1,54 @@
-/* Keep the approved photo inset from the gradient at every desktop width. */
-.hero__image {
-  border-radius: 30px;
+/* Desktop geometry follows the approved 1280px container proportions. */
+@media (min-width: 641px) {
+  .site-header .logo-image {
+    width: 168px;
+  }
+
+  .hero {
+    width: min(100%, 1280px);
+    min-height: 778px;
+    margin-inline: auto;
+  }
+
+  .hero__content {
+    min-height: 778px;
+  }
+
+  .hero__image {
+    top: 88px;
+    right: auto;
+    left: 46.09375%;
+    width: 52.734375%;
+    height: 680px;
+    border-radius: 30px;
+  }
+
+  .hero .phone-pill {
+    right: 38%;
+    bottom: 23.5%;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header .logo-image {
+    width: 126px;
+  }
+
+  .hero__image {
+    right: 16px;
+    width: calc(69% - 16px);
+    border-radius: 30px;
+  }
+
+  .hero h1 {
+    width: calc(100% - 40px);
+    max-width: calc(100vw - 40px);
+    font-size: clamp(30px, 9.5vw, 49px);
+    white-space: nowrap;
+  }
+
+  .hero .phone-pill {
+    right: 8px;
+    bottom: 50px;
+  }
 }
