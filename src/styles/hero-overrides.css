@@ -30,7 +30,7 @@
 
   .hero h1 {
     left: calc((100% - 1280px) / 2);
-    font-size: clamp(54px, 9vw, 132px);
+    font-size: clamp(150px, 11.5vw, 165px);
   }
 }
 
