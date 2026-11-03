@@ -1,4 +1,4 @@
-/* The reference keeps the hero photo inset from the gradient with a visible radius on every edge. */
+/* Keep the approved photo inset from the gradient at every desktop width. */
 .hero__image {
   border-radius: 30px;
 }
