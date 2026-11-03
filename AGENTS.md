@@ -22,11 +22,13 @@ Keep `index.astro` as the composition root. Extract a section into `src/componen
 
 ## Implementation requirements
 
+- Before changing markup, CSS, assets, copy, or responsive behavior, inspect `DESIGN-SPEC.md` plus the approved originals in `references/` and `assets/`. Preserve the approved section order, layout relationships, typography hierarchy, copy, and supplied photography. Do not invent replacement content, imagery, colors, spacing, interactions, or responsive layouts. Escalate ambiguous or inconsistent specification, asset-mapping, mockup, or copy questions to Design and CEO approval.
 - Use semantic HTML landmarks and heading hierarchy; keep links, buttons, navigation, `details`/`summary`, and form controls keyboard-operable and appropriately labelled.
 - Preserve visible `:focus-visible` states, touch-friendly targets, useful image alt text, and support for `prefers-reduced-motion`. Do not rely on color alone to communicate state.
-- Match the approved design in `DESIGN-SPEC.md` and supplied references at 1440px desktop and 390px mobile. Keep layouts fluid, avoid overflow, and verify intermediate-width behavior when changing responsive CSS.
+- Match the approved design in `DESIGN-SPEC.md` and supplied references at exactly 1440px desktop and exactly 390px mobile. Preserve the 1280px centered desktop container, 16–20px mobile gutters, stacked mobile cards, visible focus states, and touch-sized controls. Keep layouts fluid and avoid overflow; verify intermediate-width behavior when changing responsive CSS.
 - Preserve meaningful page metadata, canonical/site configuration, descriptive titles and descriptions, crawlable links, and semantic structure. Add structured data only when its content is accurate and approved.
-- Prefer the existing Astro/CSS approach and supplied assets. Optimize image dimensions/formats and loading behavior when appropriate, avoid unnecessary client JavaScript, and keep animations progressively enhanced.
+- Prefer the existing Astro/CSS approach and supplied assets. Preserve approved originals and their `public/assets/` runtime aliases and mapping. Optimize image dimensions/formats and loading behavior when appropriate, avoid unnecessary client JavaScript, and keep animations progressively enhanced.
+- Treat all copy, phone numbers, email addresses, service areas, testimonials, and contact details as approval-sensitive content. Do not change or fabricate them without Design/CEO approval.
 - Keep components and styles readable and focused. Do not introduce dependencies, invent client content, replace approved photography, or make unrelated refactors as part of a focused task.
 - Design fidelity and responsive changes require LeToya’s design review; technical implementation, accessibility, SEO, performance, and validation remain Engineering responsibilities. Surface uncertainty instead of inventing a visual or content decision.
 
@@ -40,11 +42,12 @@ npm run build
 npm run test:visual
 ```
 
-`npm run test:visual` starts the configured Astro dev server and checks desktop (1440px) and mobile (390px) Playwright references, including section crops and full-page output. Use `npm run test:visual:update` only after an approved visual change and review the resulting snapshots. `npm run dev` is available for manual inspection. Do not claim a validation command passed unless it was actually run; record failures and environmental limitations in the handoff.
+`npm run test:visual` starts the configured Astro dev server and must compare the full page and every section against the approved references at exactly 1440px desktop and exactly 390px mobile. Confirm the 1280px centered desktop container, 16–20px mobile gutters, stacked cards, focus states, and touch-sized controls. Use `npm run test:visual:update` only after an approved design change is documented; never change approved references or refresh baselines merely to make a test pass. `npm run dev` is available for manual inspection. Do not claim a validation command passed unless it was actually run; record failures and environmental limitations in the handoff.
 
 ## Git and collaboration workflow
 
 - Work only in the Ridgeline repository for Ridgeline tasks. Check `pwd`, branch, remote, and `git status` before edits.
+- Deliver implementation work from a dedicated task branch and prepare a pull request for review. Preserve the existing history and prior commits when creating that branch; do not merge it.
 - Keep commits focused and reviewable. Documentation-only work must not include source, asset, dependency, generated-output, or unrelated changes.
 - Preserve existing Git history. Do not rewrite history, reset or revert other agents’ work, force-push, or switch branches in a shared checkout without explicit direction.
 - Review the diff and validation evidence before handoff. Pushes, pull requests, merges, deployments, and changes to approved baselines require explicit authorization from the project owner/reviewer.
