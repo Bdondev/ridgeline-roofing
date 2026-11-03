@@ -5,9 +5,9 @@
   }
 
   .hero {
-    width: min(100%, 1280px);
+    width: calc(100% - 32px);
     min-height: 778px;
-    margin-inline: auto;
+    margin-inline: 16px;
   }
 
   .hero__content {
@@ -17,8 +17,8 @@
   .hero__image {
     top: 88px;
     right: auto;
-    left: 46.09375%;
-    width: 52.734375%;
+    left: calc((100% - 1280px) / 2 + 590px);
+    width: 675px;
     height: 680px;
     border-radius: 30px;
   }
@@ -26,6 +26,11 @@
   .hero .phone-pill {
     right: 38%;
     bottom: 23.5%;
+  }
+
+  .hero h1 {
+    left: calc((100% - 1280px) / 2);
+    font-size: clamp(54px, 9vw, 132px);
   }
 }
 
